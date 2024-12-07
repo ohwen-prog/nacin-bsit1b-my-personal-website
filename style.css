@@ -1,0 +1,920 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    /* Default size for easier scaling */
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    /* Light beige background for the body */
+    color: #333;
+    /* Dark text color for readability */
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+/* General Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    /* Standard font size for better readability */
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: transparent;
+    /* Transparent background */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 10px 0;
+    /* Reduced padding */
+}
+
+nav .nav-container {
+    display: flex;
+    justify-content: space-between;
+    /* Spread out the logo and links */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 1.6rem;
+    /* Smaller logo */
+    font-weight: bold;
+    color: maroon;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav .nav-links {
+
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-left: auto;
+    /* Align links to the right */
+}
+
+nav .nav-links li {
+    display: inline;
+}
+
+nav .nav-links a {
+    color: #F5DEB3;
+    /* Beige color */
+    font-size: 1rem;
+    /* Smaller text size */
+    font-weight: bold;
+    /* Regular weight */
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    color: #FFA500;
+    /* Orange color on hover */
+}
+
+/* Scroll Effect: Add a shadow to nav on scroll */
+body.scrolled nav {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav .nav-links {
+        gap: 15px;
+    }
+
+    nav .logo {
+        font-size: 1.3rem;
+    }
+}
+
+/* Sticky Navigation Bar */
+nav {
+    position: sticky;
+    top: 0;
+    /* Stays at the top of the viewport */
+    z-index: 100;
+    /* Ensures it stays above other elements */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Slightly transparent white */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    /* Smooth transition for color change */
+}
+
+nav:hover {
+    background-color: rgba(255, 255, 255, 1);
+    /* Fully opaque when hovered */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #800000;
+    /* Deep Maroon */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+    /* Golden when hovered */
+}
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed; /* Change to fixed for better placement */
+        top: 0; /* Position it at the top of the screen */
+        right: 0; /* Align to the right */
+        height: 100%; /* Make it cover the full height */
+        background-color: maroon; /* Background color */
+        width: 250px; /* Set a fixed width for the menu */
+        flex-direction: column; /* Stack links vertically */
+        gap: 15px; /* Space between links */
+        padding: 50px 20px; /* Add padding for spacing */
+        border-radius: 0; /* Remove border-radius for consistency */
+        transform: translateX(100%); /* Default: Hidden off-screen */
+        transition: transform 0.3s ease-in-out; /* Smooth slide-in effect */
+        z-index: 999; /* Ensure it appears above other elements */
+    }
+
+    .nav-links.show {
+        transform: translateX(0); /* Slide menu into view */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon */
+    }
+}
+
+/* General hamburger styling */
+.hamburger {
+    display: none; /* Default: hide it */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it shows above other elements */
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    height: 25px;
+}
+
+/* Hamburger bars */
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: bisque; /* Use your theme colors */
+    margin: 3px 0;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Only show the hamburger on smaller screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show the hamburger menu on small screens */
+    }
+}
+
+/* Hero Section */
+#hero {
+    background-image: url(bckg.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    /* Ensures it covers the whole screen */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align to the left */
+    padding: 0 20px;
+    /* Padding for smaller screens */
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(128, 0, 0, 0.4);
+    /* Maroon with 40% opacity */
+    opacity: 0.5;
+    z-index: -1;
+}
+
+#hero .hero {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 50px;
+}
+
+#hero h1 {
+    display: block;
+    font-size: 3rem;
+    /* Increased for better visibility */
+    position: relative;
+    color: transparent;
+    animation: text_reveal 1s ease forwards;
+    animation-delay: 1s;
+    text-align: left;
+    /* Align text to the left */
+    margin: 10px 0;
+}
+
+#hero h1:nth-child(1) {
+    animation-delay: 1s;
+}
+
+#hero h1:nth-child(2) {
+    animation-delay: 2s;
+}
+
+#hero h1:nth-child(3) {
+    animation-delay: 3s;
+}
+
+#hero h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #E87722;
+    animation: text_reveal_box 1s ease;
+    animation-delay: 0.3s;
+}
+
+#hero h1:nth-child(1) span {
+    animation-delay: 0.5s;
+}
+
+#hero h1:nth-child(2) span {
+    animation-delay: 1.5s;
+}
+
+#hero h1:nth-child(3) span {
+    animation-delay: 2.5s;
+}
+
+#hero .cta {
+    display: inline-block;
+    padding: 15px 40px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #800000;
+    /* Maroon color for the border */
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-top: 30px;
+    transition: 0.3s ease;
+    transition-property: background-color, color;
+    cursor: pointer;
+}
+
+#hero .cta:hover {
+    color: white;
+    background-color: #800000;
+    /* Maroon background on hover */
+}
+
+#about-me {
+    margin-top: 50px;
+    padding: 60px 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    background-color: #f8f4f1;
+    /* Soft off-white background */
+}
+
+.about-me-title {
+    color: #800000;
+    /* Maroon color for the title */
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.about-me-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.about-me-card {
+    position: relative;
+    width: '';
+    /* Matches the size of the card and image */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    /* Soft shadow effect */
+    text-align: center;
+}
+
+
+
+.about-me-card:hover {
+    transform: scale(1);
+    /* Slight zoom on hover */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    /* Deeper shadow on hover */
+}
+
+.about-me-image img {
+    width: '';
+    height: auto;
+    max-height: 500px;
+    /* Bigger image size */
+    object-fit: cover;
+    /* Ensure the image covers the card area */
+    border-radius: 10px;
+    /* Slight border radius to soften edges */
+    overflow: hidden;
+}
+
+.about-me-caption {
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    color: maroon;
+    background-color: #f4d4c1;
+    padding: 15px;
+    border-radius: 8px;
+    width: 90%;
+}
+
+.about-me-caption h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.about-me-caption p {
+    font-size: 1rem;
+    margin-top: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.about-me-content {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-me-box {
+    background-color: #ffffff;
+    /* White background for boxes */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    /* Soft shadow for boxes */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.about-me-box:hover {
+    transform: translateY(-10px);
+    /* Hover effect on box */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    /* Deeper shadow on hover */
+}
+
+.about-me-box h3 {
+    color: #800000;
+    /* Maroon color for headings */
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.about-me-box p {
+    color: #4f4f4f;
+    /* Dark gray for better text readability */
+    font-size: 1rem;
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.about-me-box.personal {
+    background-color: #f4d4c1;
+    /* Soft peach for personal background */
+}
+
+.about-me-box.academic {
+    background-color: #f4d4c1;
+    /* Soft warm beige for academic background */
+}
+
+.about-me-box.mission {
+    background-color: #e9c8b8;
+    /* Soft light brown for mission background */
+}
+
+@media (max-width: 768px) {
+    #about-me {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me-card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .about-me-content {
+        width: 80%;
+    }
+}
+
+/* Project Section */
+#projects {
+    padding: 80px 50px;
+    background-color: #f5e8e1;
+    /* Soft pink-beige */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #800000;
+    /* Maroon */
+    margin-bottom: 50px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.1);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(128, 0, 0, 0.6);
+    /* Maroon */
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h2 {
+    font-size: 1.6rem;
+    color: #800000;
+    /* Maroon */
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tech-list span {
+    background-color: #f8d9c8;
+    /* Soft beige-pink */
+    color: #800000;
+    /* Maroon */
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.btn {
+    background-color: #800000;
+    /* Maroon */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #a60000;
+}
+
+/* Blog Section */
+#blog {
+    padding: 80px 50px;
+    background-color: #f8f7f7;
+    /* Soft background for better readability */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #800000;
+    /* Maroon */
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: right;
+}
+
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog-image {
+    flex: 1;
+    max-width: 40%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.blog-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog-image:hover img {
+    transform: scale(1.05);
+}
+
+.blog-content {
+    flex: 2;
+    max-width: 55%;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.blog-content h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #800000;
+    /* Maroon */
+    margin-bottom: 20px;
+}
+
+.blog-content p,
+.blog-content ol {
+    margin-bottom: 15px;
+}
+
+.blog-content ol {
+    padding-left: 20px;
+    list-style-type: decimal;
+}
+
+
+/* Contact Section */
+#contact {
+    padding: 80px 50px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-title {
+    font-size: 3rem;
+    color: #800000;
+    /* Maroon */
+    margin-bottom: 30px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    flex: 1;
+    max-width: 400px;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.contact-item i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #800000;
+    /* Maroon */
+}
+
+.contact-item a {
+    color: #800000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    background-color: #f8f7f7;
+    /* Soft background for form */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.contact-form button {
+    background-color: #800000;
+    /* Maroon */
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #a52a2a;
+    /* Darker maroon on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+
+/* Footer Styles */
+#footer {
+    background-color: #800000;
+    /* Maroon Background */
+    color: #fff;
+    /* White text for contrast */
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.footer-info p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.footer-social a {
+    color: #fff;
+    /* White color for icons */
+    margin: 0 10px;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #ff6347;
+    /* Tomato color on hover */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-social {
+        margin-top: 10px;
+    }
+}
+
+
+/* Keyframes */
+@keyframes text_reveal_box {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes text_reveal {
+    0% {
+        color: transparent;
+    }
+
+    100% {
+        color: white;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5rem;
+        /* Smaller size for mobile */
+    }
+
+    .cta {
+        font-size: 1.8rem;
+        /* Adjusted button size for smaller screens */
+        padding: 10px 30px;
+    }
+
+    #about h2 {
+        font-size: 2.5rem;
+        /* Smaller header size for mobile */
+    }
+
+    #about p {
+        font-size: 1.4rem;
+        /* Adjusted paragraph size for readability */
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h1 {
+        font-size: 2rem;
+        /* Further reduce font size for small devices */
+    }
+
+    .cta {
+        font-size: 1.5rem;
+        /* Adjusted button size for small screens */
+    }
+
+    #about h2 {
+        font-size: 2rem;
+        /* Header size adjustment */
+    }
+
+    #about p {
+        font-size: 1.3rem;
+        /* Font size adjustment for small screens */
+    }
+}
